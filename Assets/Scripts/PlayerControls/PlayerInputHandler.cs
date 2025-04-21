@@ -45,10 +45,14 @@ public class PlayerInputHandler : MonoBehaviour
     private void Update()
     {
         Vector2 moveInput = _controls.Player.Move.ReadValue<Vector2>();
-        Vector2 lookInput = _controls.Player.Look.ReadValue<Vector2>();
 
         _movement.Move(moveInput);
-        _movement.Look(lookInput);
+    }
+
+    void LateUpdate()
+    {
+        Vector2 look = _controls.Player.Look.ReadValue<Vector2>();
+        _movement.Look(look);
     }
 
     private void OnJump(InputAction.CallbackContext ctx) => _movement.Jump();

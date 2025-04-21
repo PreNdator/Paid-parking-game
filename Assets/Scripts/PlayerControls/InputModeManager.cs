@@ -1,5 +1,6 @@
 using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 public class InputModeManager : MonoBehaviour
