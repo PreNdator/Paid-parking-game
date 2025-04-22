@@ -37,8 +37,8 @@ public class PhotoTaker : MonoBehaviour
     {
         _originalRenderTexture = _cam.targetTexture;
         _lastAnalysisResult = _photoAnalyzer.AnalyzePhoto(_cam);
+        
         _cam.enabled = false;
-        Debug.Log("a");
         Invoke(nameof(ShowLoadingScreen), _freezeTime);
     }
 
@@ -57,6 +57,7 @@ public class PhotoTaker : MonoBehaviour
 
     private void ResumeRendering()
     {
+        Debug.Log(_lastAnalysisResult);
         _cam.enabled = true;
         _isBusy = false;
     }
