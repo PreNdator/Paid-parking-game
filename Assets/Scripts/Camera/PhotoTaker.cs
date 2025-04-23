@@ -57,7 +57,6 @@ public class PhotoTaker : MonoBehaviour
 
     private void ResumeRendering()
     {
-        Debug.Log(_lastAnalysisResult);
         _cam.enabled = true;
         _isBusy = false;
     }
