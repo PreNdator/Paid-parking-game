@@ -18,6 +18,13 @@ public abstract class Car : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 5f;
 
     public event System.Action<Car> PathCompleted;
+    [Header("Car parts")]
+    [SerializeField]
+    private Headlights _headlights;
+
+    public float Speed => _speed;
+    public float RotationSpeed => _rotationSpeed;
+    public Headlights Headlights => _headlights; 
 
     [Inject]
     private void Construct(IPathProvider pathProvider)
@@ -40,9 +47,10 @@ public abstract class Car : MonoBehaviour
             foreach (Vector3 target in _pathProvider.GetPoints())
             {
                 await MoveToPoint(target, token);
-
+                
                 if (Random.value < _actionChance)
                 {
+                    _actionChance = 0;
                     await DoSpecialAction();
                     await ReturnToPath(target, token);
                 }
@@ -56,7 +64,7 @@ public abstract class Car : MonoBehaviour
         }
     }
 
-    private async UniTask MoveToPoint(Vector3 target, System.Threading.CancellationToken token)
+    public async UniTask MoveToPoint(Vector3 target, System.Threading.CancellationToken token)
     {
         while (Vector3.Distance(transform.position, target) > 0.1f)
         {
@@ -81,6 +89,8 @@ public abstract class Car : MonoBehaviour
             await UniTask.Yield(PlayerLoopTiming.Update, token);
         }
     }
+
+    
 
     private async UniTask ReturnToPath(Vector3 pathPoint, System.Threading.CancellationToken token)
     {
