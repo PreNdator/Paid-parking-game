@@ -1637,8 +1637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waypoints:
-  - {fileID: 1140636508}
   - {fileID: 771682061}
+  - {fileID: 1140636508}
   _pointsBetween: 10
 --- !u!1 &381427680
 GameObject:
@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minSpawnTime: 3
   _maxSpawnTime: 6
-  _spawnPoint: {fileID: 1140636508}
+  _spawnPoint: {fileID: 771682061}
 --- !u!4 &739196098
 Transform:
   m_ObjectHideFlags: 0
@@ -7768,6 +7768,7 @@ MonoBehaviour:
   _carPrefabs:
   - {fileID: 682136823742661262, guid: 8072d48cd8ac92d488e05c08e69c593d, type: 3}
   - {fileID: -4618793204065062686, guid: 282189b6e8a27f443a7e5d6a92ec0eba, type: 3}
+  - {fileID: 218709297958269556, guid: 158bdcd1c8f492648a0739ec0620dae4, type: 3}
 --- !u!1 &1877089763
 GameObject:
   m_ObjectHideFlags: 0

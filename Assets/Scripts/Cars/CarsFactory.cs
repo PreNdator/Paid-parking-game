@@ -43,10 +43,12 @@ public class CarsFactory : MonoBehaviour
     public void DestroyCar(Car car)
     {
         if (!_createdCars.Contains(car)) return;
-
-        car.PathCompleted -= OnCarPathCompleted;
         _createdCars.Remove(car);
-        Destroy(car.gameObject);
+        if (car != null)
+        {
+            car.PathCompleted -= OnCarPathCompleted;
+            Destroy(car.gameObject);
+        }
     }
 
     private void OnCarPathCompleted(Car car)

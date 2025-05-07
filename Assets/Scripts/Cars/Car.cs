@@ -66,10 +66,8 @@ public abstract class Car : MonoBehaviour
 
     public async UniTask MoveToPoint(Vector3 target, System.Threading.CancellationToken token)
     {
-        while (Vector3.Distance(transform.position, target) > 0.1f)
+        while (!token.IsCancellationRequested &&Vector3.Distance(transform.position, target) > 0.1f)
         {
-            token.ThrowIfCancellationRequested();
-
             if (IsCarInFront())
             {
                 await UniTask.Yield(PlayerLoopTiming.Update, token);
