@@ -283,9 +283,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615738323086533483}
-  - component: {fileID: 682136823742661262}
+  - component: {fileID: -4618793204065062686}
+  - component: {fileID: 2920727345516389567}
   m_Layer: 0
-  m_Name: Car
+  m_Name: Car 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +308,7 @@ Transform:
   - {fileID: 3116941369299287569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &682136823742661262
+--- !u!114 &-4618793204065062686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,7 +317,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3687600555344123090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a665a5c2459d65b46b0e9e0ee5375e0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 37e3e5c6fb329754eaa67e59ee77065e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _detectDistance: 5
@@ -324,11 +325,27 @@ MonoBehaviour:
   _speed: 15
   _actionChance: 0.1
   _rotationSpeed: 5
-  _headlights: {fileID: 0}
+  _headlights: {fileID: 2920727345516389567}
   _offenderObject: {fileID: 4044942223409449382}
   _violationPoints: 100
   _violationDuration: 10
-  _violationRotationSpeed: 250
+--- !u!114 &2920727345516389567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687600555344123090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf956ee2326ba0469cc17394e8b0f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lights:
+  - {fileID: 6037294744011721564}
+  - {fileID: 5306877217301781052}
+  - {fileID: 151753520544079843}
+  - {fileID: 3408424743609458351}
 --- !u!1 &4044942223409449382
 GameObject:
   m_ObjectHideFlags: 0

@@ -283,9 +283,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615738323086533483}
-  - component: {fileID: 682136823742661262}
+  - component: {fileID: 218709297958269556}
   m_Layer: 0
-  m_Name: Car
+  m_Name: Car With Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,10 +304,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6537426988407112522}
   - {fileID: 3116941369299287569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &682136823742661262
+--- !u!114 &218709297958269556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,19 +317,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3687600555344123090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a665a5c2459d65b46b0e9e0ee5375e0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 801a471d7ce8d2c449072adee778686a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectDistance: 5
-  _detectRadius: 2.4
-  _speed: 15
+  _detectDistance: 4.36
+  _detectRadius: 1.6
+  _speed: 20
   _actionChance: 0.1
   _rotationSpeed: 5
   _headlights: {fileID: 0}
   _offenderObject: {fileID: 4044942223409449382}
   _violationPoints: 100
   _violationDuration: 10
-  _violationRotationSpeed: 250
+  _humanPrefabs:
+  - {fileID: 3660234093510444651, guid: f6d1642e9f0aebf4fb7ec42526ff973c, type: 3}
+  _humanSpawnPoint: {fileID: 6537426988407112522}
 --- !u!1 &4044942223409449382
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,3 +661,34 @@ Transform:
   - {fileID: 6330311976536320376}
   m_Father: {fileID: 6615738323086533483}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &8405771679671757334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6537426988407112522}
+  m_Layer: 0
+  m_Name: Human Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6537426988407112522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8405771679671757334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.097, y: 0, z: 1.016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6615738323086533483}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
